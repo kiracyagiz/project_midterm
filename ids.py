@@ -1,14 +1,7 @@
 from pacman_module.game import Agent, Directions
 
 def key(state):
-    """Returns a key that uniquely identifies a Pacman game state.
 
-    Arguments:
-        state: a game state. See API or class pacman.GameState.
-
-    Returns:
-        A hashable key tuple.
-    """
     return (
         state.getPacmanPosition(),
         state.getFood(),
@@ -41,7 +34,6 @@ class PacmanAgent(Agent):
             return Directions.STOP
 
     def ids(self, state):
-        """Iterative Deepening Search algorithm to find the optimal path.
 
         Arguments:
             state: a game state. See API or class pacman.GameState.
@@ -56,16 +48,7 @@ class PacmanAgent(Agent):
                 return result
 
     def dls(self, state, depth):
-        """Depth-limited Search to explore paths up to a given depth.
 
-        Arguments:
-            state: a game state. See API or class pacman.GameState.
-            depth: the maximum depth to explore.
-
-        Returns:
-            A list of legal moves if a solution is found within the depth limit,
-            otherwise None.
-        """
 
         def recursive_dls(current_state, current_depth, path):
             if current_depth == 0:
